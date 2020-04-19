@@ -1,18 +1,17 @@
 #include "list_child.h"
-#define next(P) P->next
-#define info(P) P->info
-#define last(L) L.last
-#define first(L) L.first
-#include <iostream>
 
 using namespace std;
 
-void newElement_child(infotype x){
+void newElement_child(address P, int year, string facultyMajor, string faculty, string Akreditasii){
     address P;
     P=new elmList;
-    info(P)=x;
-    next(P)=NULL;
+    info_child(P).tahun_masuk = year;
+    info_child(P).jurusan_pilihan = facultyMajor;
+    info_child(P).fakultas = faculty;
+    info_child(P).akreditasi = Akreditasii;
+    next_child(P)=NULL;
 }
+
 void create_List_child(List &L) {
     first(L)=NULL;
     last(L)=NULL;

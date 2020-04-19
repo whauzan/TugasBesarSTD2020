@@ -7,15 +7,14 @@ void createList_parent(List &L){
     first(L)=NULL;
 }
 
-void newElement_parent(address &P, int nim_baru, string nama_mhs, int tahunMasuk){
+void newElement_parent(address &P, int id_baru, string nama_mhs, string asal_sekolah, string major, int donasi){
     address P;
     P = new elmList;
-    info_parent(P).ID = nim_baru;
+    info_parent(P).ID = id_baru;
     info_parent(P).nama = nama_mhs;
     info_parent(P).sma = asal_sekolah;
-    info_parent(P).asal = asal_kota;
-    info_parent(P).jurusan = jurusan_sma;
-    info_parent(P).tahun = tahunMasuk;
+    info_parent(P).jurusan_sma = major;
+    info_parent(P).sumbangan = donasi;
     prev(P)=NULL;
     next_parent(P)=NULL;
 }
@@ -90,11 +89,11 @@ void printList_parent(List &L){
     }
 }
 
-address searchbyID_parent(List &L, int nim_siswa){
+address searchbyID_parent(List &L, int id_search){
     address P;
     P=first(L);
     while(next_parent(P)!=prev(P)){
-        if(info_parent(P).NIM==nim_siswa){
+        if(info_parent(P).ID==id_search){
             return P;
         }
         P=next_parent(P);

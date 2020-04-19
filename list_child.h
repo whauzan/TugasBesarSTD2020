@@ -1,20 +1,22 @@
 #ifndef LIST_CHILD_H_INCLUDED
 #define LIST_CHILD_H_INCLUDED
-#include <iostream>
-#define next(P) P->next
-#define info(P) P->info
+#define next_child(P) P->next_child
+#define info_child(P) P->info_child
 #define last(L) L.last
 #define first(L) L.first
 
 using namespace std;
 
-typedef string infotype;
+typedef infotype{
+    int tahun_masuk;
+    string jurusan_pilihan, fakultas, akreditasi;
+}
+
 typedef struct elmList *address;
 
-
 struct elmList {
-    infotype info;
-    address next;
+    infotype info_child;
+    address next_child;
 };
 
 struct List{
@@ -22,7 +24,7 @@ struct List{
     address last;
 };
 
-void newElement_child(infotype x);
+void newElement_child(address P, int year, string facultyMajor, string faculty, string Akreditasii);
 void create_List_child();
 void insertFirst_child(List &L, address P);
 void insertAfter_child(List &L, address Prec, address P);
