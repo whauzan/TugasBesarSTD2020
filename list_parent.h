@@ -8,6 +8,9 @@
 #define ke_parent(P) P->parent
 
 #include <iostream>
+#include <stdlib.h>
+#include <conio.h>
+#include <string>
 
 using namespace std;
 
@@ -32,7 +35,7 @@ struct List_parent{
 void createList_parent(List_parent &LP);
 address_parent newElement_parent(parent x);
 void deallocate_parent(address_parent &P);
-address_parent input_parent();
+address_parent input_parent(List_parent LP);
 void insertFirst_parent(List_parent &LP, address_parent P);
 void insertAfter_parent(List_parent &LP, address_parent Prec, address_parent P);
 void insertLast_parent(List_parent &LP, address_parent P);
